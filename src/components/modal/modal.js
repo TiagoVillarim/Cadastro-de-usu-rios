@@ -1,16 +1,19 @@
 import React, { useState } from "react";
+import { userContext } from "../context/useContext";
 import ModalStyle from "../styles/modal.scss";
 
 export default function Modal(props) {
   
-  const [usersList, setUsersList] = useState(["tiago", 20, "email@email.com"]);
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
   const [job, setJob] = useState("");
   const [email, setEmail] = useState("");
 
+  const { setShowModal, userList, setUserList } = React.useContext(userContext);
+
+
   function onSubmit() {
-    setUsersList([...usersList, name, age, email]);
+    setUserList([...userList, name, age, email]);
     setName("");
     setEmail("");
     setAge("");
@@ -31,7 +34,7 @@ export default function Modal(props) {
           <input type="text" placeholder="Job:" value={job} onChange={event => setJob(event.target.value)} className="inputs"/>
         </div>
         <div className="modal-footer">
-          <button className="button">Close</button>
+          <button className="button" onClick={() => setShowModal(false)}>Close</button>
           <button className="button" onClick={onSubmit}>Submit</button>
         </div>
       </div>
