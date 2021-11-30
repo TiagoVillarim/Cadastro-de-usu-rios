@@ -37,33 +37,4 @@ body {
     color: white;
   }
 
-  .inputs-section {
-    display: flex;
-    align-items: center;
-    margin-top: 3%;
-
-    .inputs {
-      padding: 10px;
-      margin: 20px;
-      width: 300px;
-      border-radius: 15px;
-      border: none;
-      outline: none;
-      opacity: 0.9;
-    }
-  }
-
-  .submit-button {
-    background-color: $default-color;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-    width: 200px;
-    height: 30px;
-    outline: none;
-    border: none;
-    border-radius: 10px;
-  }
 }
