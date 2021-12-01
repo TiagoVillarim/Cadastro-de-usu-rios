@@ -17,6 +17,7 @@ export default function Modal(props) {
     setName("");
     setEmail("");
     setAge("");
+    setShowModal(false);
   };
 
   if(!props.showModal) {
