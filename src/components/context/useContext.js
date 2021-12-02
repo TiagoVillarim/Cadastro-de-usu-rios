@@ -5,7 +5,7 @@ export const userContext = React.createContext({});
 
 export const UserProvider = (props) => {
 
-  const [userList, setUserList] = useState(["tiago", 20, "email@email.com"]);
+  const [userList, setUserList] = useState([]);
 
   const [showModal, setShowModal] = useState(false);
 

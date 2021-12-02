@@ -11,12 +11,20 @@ export default function Modal(props) {
 
   const { setShowModal, userList, setUserList } = React.useContext(userContext);
 
+  const users = {
+    name: name,
+    age: age,
+    job: job,
+    email: email
+  }
+
 
   function onSubmit() {
-    setUserList([...userList, name, age, email]);
+    setUserList([...userList, {users}]);
     setName("");
     setEmail("");
     setAge("");
+    setJob("")
     setShowModal(false);
   };
 
