@@ -18,23 +18,23 @@ export default function Home() {
       </header>
 
       <body className="body-container">
-        <button onClick={() => setShowModal(true)}>show modal</button>
+        <button onClick={() => setShowModal(true)} className="show-modal">Cadastrar novo usuário</button>
         <Modal showModal={showModal} onClose={() => setShowModal(false)}/>
         <section className="users-section">
           <div className="users-box">
-            <a>Name</a>
-            <a>Age</a>
-            <a>Job</a>
-            <a>Email</a>
+            <a className="user">Name:</a>
+            <a>Age:</a>
+            <a>Job:</a>
+            <a>Email:</a>
           </div>
           <div className="users-container">
             {userList.map((listItem, index) => {
               return(
                 <div className="list-users" key={index}>
-                  <a>{listItem.users.name}</a>
-                  <a>{listItem.users.age}</a>
-                  <a>{listItem.users.job}</a>
-                  <a>{listItem.users.email}</a>
+                  <a className="user">{listItem.users.name}</a>
+                  <a className="user">{listItem.users.age}</a>
+                  <a className="user">{listItem.users.job}</a>
+                  <a className="user">{listItem.users.email}</a>
                 </div>
               )
             })}

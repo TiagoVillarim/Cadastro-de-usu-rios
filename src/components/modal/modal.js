@@ -18,14 +18,18 @@ export default function Modal(props) {
     email: email
   }
 
-
   function onSubmit() {
-    setUserList([...userList, {users}]);
-    setName("");
-    setEmail("");
-    setAge("");
-    setJob("")
-    setShowModal(false);
+    if(name < 1 || name === undefined || age < 1 || age === undefined || 
+      job < 1 || job === undefined || email < 1 || email === undefined) {
+        alert("Opa, parece que você esqueceu de algo, tente novamente");
+      }else{
+        setUserList([...userList, {users}]);
+        setName("");
+        setEmail("");
+        setAge("");
+        setJob("")
+        setShowModal(false);
+      };
   };
 
   if(!props.showModal) {

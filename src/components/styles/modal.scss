@@ -17,7 +17,7 @@ $default-color: rgb(111, 61, 230);
   flex-direction: column;
   width: 700px;
   height: 500px;
-  background-color: rgb(214, 214, 214);
+  background-color: rgb(241, 241, 241);
   border-radius: 10px;
 }
 
@@ -32,9 +32,14 @@ $default-color: rgb(111, 61, 230);
     margin: 20px;
     width: 300px;
     border-radius: 15px;
-    border: none;
+    border: 1px solid rgba(111,61,230, 0);
     outline: none;
     opacity: 0.9;
+    transition: 0.3s;
+  }
+
+  .inputs:hover {
+    border: 1px solid rgba(111,61,230, 1);
   }
 }
 
@@ -56,6 +61,12 @@ $default-color: rgb(111, 61, 230);
     outline: none;
     border: none;
     border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .button:hover {
+    opacity: 0.6;
   }
 }
 
