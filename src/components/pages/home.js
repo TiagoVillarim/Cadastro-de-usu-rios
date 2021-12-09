@@ -6,10 +6,9 @@ import GlobalStyle from "../../../src/Global.scss"
 
 export default function Home() {
 
-  const { userList, showModal, setShowModal } = React.useContext(userContext);
+  const { userList, setUserList, showModal, setShowModal } = React.useContext(userContext);
 
   console.log(userList)
-
 
   return(
     <>
@@ -20,21 +19,18 @@ export default function Home() {
       <body className="body-container">
         <button onClick={() => setShowModal(true)} className="show-modal">Cadastrar novo usuário</button>
         <Modal showModal={showModal} onClose={() => setShowModal(false)}/>
-        <section className="users-section">
-          <div className="users-box">
-            <a className="user">Name:</a>
-            <a>Age:</a>
-            <a>Job:</a>
-            <a>Email:</a>
-          </div>
+        <section className="section-container">
+          <h1>Usuários cadastrados</h1>
           <div className="users-container">
             {userList.map((listItem, index) => {
               return(
                 <div className="list-users" key={index}>
-                  <a className="user">{listItem.users.name}</a>
-                  <a className="user">{listItem.users.age}</a>
-                  <a className="user">{listItem.users.job}</a>
-                  <a className="user">{listItem.users.email}</a>
+                  <a className="user"><strong>Name:</strong>{listItem.users.name}</a>
+                  <a className="user"><strong>Age:</strong>{listItem.users.age}</a>
+                  <a className="user"><strong>Job:</strong>{listItem.users.job}</a>
+                  <a className="user"><strong>Email:</strong>{listItem.users.email}</a>
+                  <button onClick={() => setShowModal(true)}>Editar</button>
+                  <button>X</button>
                 </div>
               )
             })}

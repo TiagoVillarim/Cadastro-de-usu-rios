@@ -33,14 +33,16 @@ body {
   width: 200px;
   height: 30px;
   outline: none;
-  border: none;
+  border: 1px solid rgba(111,61,230, 0.3);
   border-radius: 10px;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .show-modal:hover {
-  opacity: 0.6;
+  color:rgb(111, 61, 230);
+  background-color: white;
+  border: 1px solid rgb(111, 61, 230);
 }
 
 .body-container {
@@ -49,45 +51,56 @@ body {
   align-items: center;
   justify-content: center;
   margin-top: 3%;
-  
-  .users-section {
-    background-color: rgb(241, 241, 241);
+
+  .section-container{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 1000px;
-    height: 100%;
-    border-radius: 10px;
-    margin-top: 100px;
-    padding-bottom: 10%;
-    box-shadow: 1px 1px 4px 1px rgba(111,61,230, 0.3);
 
-
-    .users-box {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 950px;
-      border-bottom: 1px solid rgba(0,0,0, 0.4);
-
-      a {
-        font-size: 20px;
-        font-weight: 400;
-        margin: 10px 100px 8px 100px;
-      }
+    h1 {
+      font-size: 30px;
+      margin-top: 50px;
     }
-
+    
     .users-container {
       display: flex;
       flex-direction: column;
-
+      
       .list-users {
+        background-color: rgb(241, 241, 241);
         display: flex;
-        margin-left: 40px;
-
+        align-items: center;
+        justify-content: center;
+        width: 1000px;
+        border-radius: 10px;
+        margin-top: 50px;
+        box-shadow: 1px 1px 4px 1px rgba(111,61,230, 0.3);
+        
         .user{
-          padding: 100px;
+          padding: 40px;
+        }
+
+        strong {
+          padding-right: 10px;
+        }
+
+        button {
+          color: white;
+          background-color: rgb(111, 61, 230);
+          margin-right: 10px;
+          font-weight: 500;
+          padding: 7px;
+          border-radius: 5px;
+          border: 1px solid rgba(111,61,230, 0.3);
+          cursor: pointer;
+          transition: 0.3s;
+        }
+        
+        button:hover {
+          color:rgb(111, 61, 230);
+          background-color: white;
+          border: 1px solid rgb(111, 61, 230);
         }
       }
     }
