@@ -9,7 +9,7 @@ export default function Modal(props) {
   const [job, setJob] = useState("");
   const [email, setEmail] = useState("");
 
-  const { setShowModal, userList, setUserList } = React.useContext(userContext);
+  const { setShowModal, userList, setUserList, setCadastrado } = React.useContext(userContext);
 
   const users = {
     name: name,
@@ -17,6 +17,12 @@ export default function Modal(props) {
     job: job,
     email: email
   }
+
+  function usuariosCadastrados() {
+    if(userList) {
+      setCadastrado("Usuários cadastrados");
+    };
+  };
 
   function onSubmit() {
     if(name < 1 || name === undefined || age < 1 || age === undefined || 
@@ -27,8 +33,9 @@ export default function Modal(props) {
         setName("");
         setEmail("");
         setAge("");
-        setJob("")
+        setJob("");
         setShowModal(false);
+        usuariosCadastrados();
       };
   };
 
