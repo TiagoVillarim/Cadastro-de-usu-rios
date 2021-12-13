@@ -6,7 +6,12 @@ import GlobalStyle from "../../../src/Global.scss"
 
 export default function Home() {
 
-  const { userList, setUserList, showModal, setShowModal, cadastrado } = React.useContext(userContext);
+  const { 
+    userList,
+    showModal,
+    setShowModal,
+    cadastrado,
+  } = React.useContext(userContext);
 
   return(
     <>

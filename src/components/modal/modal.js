@@ -9,7 +9,12 @@ export default function Modal(props) {
   const [job, setJob] = useState("");
   const [email, setEmail] = useState("");
 
-  const { setShowModal, userList, setUserList, setCadastrado } = React.useContext(userContext);
+  const {
+    setShowModal,
+    userList,
+    setUserList,
+    setCadastrado,
+  } = React.useContext(userContext);
 
   const users = {
     name: name,
