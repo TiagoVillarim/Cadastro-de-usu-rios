@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { userContext } from "../context/useContext";
 import Modal from "../modal/modal"
 import HomeStyle from "../styles/home.scss"
@@ -8,10 +8,23 @@ export default function Home() {
 
   const { 
     userList,
+    setUserList,
     showModal,
     setShowModal,
     cadastrado,
+    setCadastrado,
   } = React.useContext(userContext);
+
+  const handleDeleteUsers = (email) => {
+    const removeItens = userList.filter(obj => obj.users.email !== email)
+    setUserList(removeItens)
+  }
+
+  useEffect(() => {
+    if(userList.length == 0) {
+      setCadastrado("Nenhum usuário cadastrado");
+    };
+  }, [userList]);
 
   return(
     <>
@@ -33,7 +46,7 @@ export default function Home() {
                   <a className="user"><strong>Job:</strong>{listItem.users.job}</a>
                   <a className="user"><strong>Email:</strong>{listItem.users.email}</a>
                   <button onClick={() => setShowModal(true)}>Editar</button>
-                  <button>X</button>
+                  <button onClick={() => handleDeleteUsers(listItem.users.email)}>X</button>
                 </div>
               )
             })}
