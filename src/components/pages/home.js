@@ -16,7 +16,7 @@ export default function Home() {
   } = React.useContext(userContext);
 
   const handleDeleteUsers = (email) => {
-    const removeItens = userList.filter(obj => obj.users.email !== email)
+    const removeItens = userList.filter(users => users.users.email !== email)
     setUserList(removeItens)
   }
 
