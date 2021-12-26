@@ -34,8 +34,7 @@ export default function Modal(props) {
       setEmail("");
       setAge("");
       setJob("");
-      setShowModal(false);
-  
+      setShowModal(false)
   };
 
   function onSubmit() {

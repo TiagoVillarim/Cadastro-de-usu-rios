@@ -6,6 +6,8 @@ import GlobalStyle from "../../../src/Global.scss"
 
 export default function Home() {
 
+  const [userSearch, setUserSearch] = useState()
+
   const { 
     userList,
     setUserList,
@@ -16,15 +18,16 @@ export default function Home() {
   } = React.useContext(userContext);
 
   const handleDeleteUsers = (email) => {
-    const removeItens = userList.filter(users => users.users.email !== email)
+    const removeItens = userList.filter(item => item.users.email !== email)
     setUserList(removeItens)
   }
 
   useEffect(() => {
-    if(userList.length == 0) {
+    if(userList.length === 0) {
       setCadastrado("Nenhum usuário cadastrado");
     };
   }, [userList]);
+
 
   return(
     <>
@@ -35,10 +38,19 @@ export default function Home() {
       <body className="body-container">
         <button onClick={() => setShowModal(true)} className="show-modal">Cadastrar novo usuário</button>
         <Modal showModal={showModal} onClose={() => setShowModal(false)}/>
+          <div>
+            <input type="text" placeholder="Pesquise por um usuário:" onChange={event => setUserSearch(event.target.value)}/>
+          </div>
         <section className="section-container">
           <h1>{cadastrado}</h1>
           <div className="users-container">
-            {userList.map((listItem, index) => {
+            {userList.filter((listItem) => {
+              if(userSearch === "") {
+                return listItem
+              } else if(listItem.users.name.toLowerCase().includes(userSearch.toLowerCase())) {
+                return listItem
+              }
+            }).map((listItem, index) => {
               return(
                 <div className="list-users" key={index} id={index}>
                   <a className="user"><strong>Name:</strong>{listItem.users.name}</a>
