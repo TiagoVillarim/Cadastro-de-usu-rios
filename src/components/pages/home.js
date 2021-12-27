@@ -33,19 +33,19 @@ export default function Home() {
     <>
       <header className="header">
         <h1 className="title">Cadastro de usuários</h1>
+        <button onClick={() => setShowModal(true)} className="show-modal">Cadastrar novo usuário</button>
+        <Modal showModal={showModal} onClose={() => setShowModal(false)}/>
       </header>
 
       <body className="body-container">
-        <button onClick={() => setShowModal(true)} className="show-modal">Cadastrar novo usuário</button>
-        <Modal showModal={showModal} onClose={() => setShowModal(false)}/>
-          <div>
-            <input type="text" placeholder="Pesquise por um usuário:" onChange={event => setUserSearch(event.target.value)}/>
+          <div className="search-input-container">
+            <input className="search-input" type="text" placeholder="Pesquise por um usuário:" onChange={event => setUserSearch(event.target.value)}/>
           </div>
         <section className="section-container">
           <h1>{cadastrado}</h1>
           <div className="users-container">
             {userList.filter((listItem) => {
-              if(userSearch === "") {
+              if(userSearch === undefined) {
                 return listItem
               } else if(listItem.users.name.toLowerCase().includes(userSearch.toLowerCase())) {
                 return listItem
