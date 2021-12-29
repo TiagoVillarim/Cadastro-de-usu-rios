@@ -58,11 +58,17 @@ body {
 
     .search-input {
       border: none;
+      border: 1px solid white;
       outline: none;
       border-radius: 10px;
       height: 35px;
       width: 300px;
       padding-left: 10px;
+      transition: 0.3s;
+    }
+
+    .search-input:hover {
+      border: 1px solid $default-color;
     }
   }
 
@@ -95,7 +101,11 @@ body {
         box-shadow: 1px 1px 4px 1px rgba(111,61,230, 0.3);
         
         .user{
-          padding: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          padding: 40px 20px 40px 20px;
+          width: 200px;
         }
 
         strong {

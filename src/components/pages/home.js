@@ -53,9 +53,9 @@ export default function Home() {
             }).map((listItem, index) => {
               return(
                 <div className="list-users" key={index} id={index}>
-                  <a className="user"><strong>Name:</strong>{listItem.users.name}</a>
+                  <a className="user"><strong>Name:</strong>{listItem.users.name.toLowerCase()}</a>
                   <a className="user"><strong>Age:</strong>{listItem.users.age}</a>
-                  <a className="user"><strong>Job:</strong>{listItem.users.job}</a>
+                  <a className="user"><strong>Job:</strong>{listItem.users.job.toLowerCase()}</a>
                   <a className="user"><strong>Email:</strong>{listItem.users.email}</a>
                   <button onClick={() => setShowModal(true)}>Editar</button>
                   <button onClick={() => handleDeleteUsers(listItem.users.email)}>X</button>

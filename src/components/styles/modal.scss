@@ -19,6 +19,14 @@ $default-color: rgb(111, 61, 230);
   height: 500px;
   background-color: rgb(241, 241, 241);
   border-radius: 10px;
+
+  h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -10px;
+    font-weight: 400;
+  }
 }
 
 .inputs-section {
@@ -55,7 +63,7 @@ $default-color: rgb(111, 61, 230);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 70px 20px 0 20px;
+    margin: 50px 20px 0 20px;
     width: 200px;
     height: 30px;
     outline: none;
