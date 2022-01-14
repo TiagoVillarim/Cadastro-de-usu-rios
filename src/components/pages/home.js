@@ -6,7 +6,9 @@ import GlobalStyle from "../../../src/Global.scss"
 
 export default function Home() {
 
-  const [userSearch, setUserSearch] = useState()
+  const [userSearch, setUserSearch] = useState();
+  const [textColor, setTextColor] = useState(false);
+  const [searchInput, setSearchInput] = useState(false);
 
   const { 
     userList,
@@ -25,6 +27,11 @@ export default function Home() {
   useEffect(() => {
     if(userList.length === 0) {
       setCadastrado("Nenhum usuário cadastrado");
+      setTextColor(false);
+      setSearchInput(false);
+    }else {
+      setTextColor(true);
+      setSearchInput(true);
     };
   }, [userList]);
 
@@ -39,10 +46,14 @@ export default function Home() {
 
       <body className="body-container">
           <div className="search-input-container">
-            <input className="search-input" type="text" placeholder="Pesquise por um usuário:" onChange={event => setUserSearch(event.target.value)}/>
+            <input 
+              className={searchInput ? "search-input-active" : "search-input"}
+              type="text" 
+              placeholder="Pesquise por um usuário:" 
+              onChange={event => setUserSearch(event.target.value)}/>
           </div>
         <section className="section-container">
-          <h1>{cadastrado}</h1>
+          <h1 className={textColor ? "change-text-color-active" : "change-text-color"}>{cadastrado}</h1>
           <div className="users-container">
             {userList.filter((listItem) => {
               if(userSearch === undefined) {
